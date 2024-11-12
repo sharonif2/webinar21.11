@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>וובינר בנושא 'איך להגדיל את העסק שלי בעזרת טכנולוגיה?'</title>
+  <title>וובינר 'יותר תוצאות בפחות מאמץ - AI ואוטומציה בעסק שלך'</title>
   
   <!-- חיבור לגופן Open Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -153,6 +153,14 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 99;
     }
+
+    /* הדגשת פרטי הוובינר */
+    .webinar-details {
+      font-weight: bold;
+      font-size: 18px;
+      color: #d32f2f;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -162,7 +170,8 @@
       <img src="https://github.com/sharonif2/lecture-form/blob/main/Adif%20logo.PNG?raw=true" alt="לוגו החברה">
     </div>
 
-    <h1>וובינר בנושא 'איך להגדיל את העסק שלי בעזרת טכנולוגיה?'</h1>
+    <h1>וובינר 'יותר תוצאות בפחות מאמץ - AI ואוטומציה בעסק שלך'</h1>
+    <p class="webinar-details">תאריך: 21/11/2024<br>שעה: 17:00<br>מיקום: זום</p>
 
     <form id="webinarForm">
       <label for="fullName">שם מלא:</label>
@@ -220,23 +229,4 @@
             body: JSON.stringify(formData),  // המרת הנתונים לפורמט JSON
         })
         .then(response => response.text())  // קבלת התשובה כטקסט
-        .then(data => {
-            console.log('תשובה מהשרת:', data);
-        })
-        .catch((error) => {
-            console.error('שגיאה בשליחת הפרטים:', error);
-            alert('שגיאה בשליחת הפרטים!');
-        });
-
-        // הצגת הפופאפ
-        document.querySelector('.popup-background').style.display = 'block';
-        document.getElementById('popup').style.display = 'block';
-    });
-
-    function closePopup() {
-        document.querySelector('.popup-background').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+       
