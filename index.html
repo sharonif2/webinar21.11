@@ -183,6 +183,13 @@
       <label for="phone">טלפון:</label>
       <input type="tel" id="phone" name="phone" placeholder="הכנס טלפון" pattern="[0-9]+" required>
 
+      <label for="agencyName">שם הסוכנות:</label>
+      <input type="text" id="agencyName" name="agencyName" placeholder="הכנס שם הסוכנות" required>
+
+      <label>
+        <input type="checkbox" id="consent" name="consent" required> אני מאשר קבלת דיוור
+      </label>
+
       <input type="submit" value="אני מגיע לוובינר">
     </form>
   </div>
@@ -191,7 +198,7 @@
   <div class="popup-background"></div>
   <div class="popup" id="popup">
     <h2>תודה על ההרשמה שלך!</h2>
-    <p>נתראה ב-21.11 בשעה 17:00</p>
+    <p>זימון נשלח למייל שלך, נתראה בקרוב.<br>ירדן פלד ושרון איפראימוב</p>
     <button onclick="closePopup()">סגור</button>
   </div>
 
@@ -203,9 +210,11 @@
         const fullName = document.getElementById('fullName').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
+        const agencyName = document.getElementById('agencyName').value;
+        const consent = document.getElementById('consent').checked;
 
         // בדוק אם כל השדות מולאו כמו שצריך
-        if (!fullName || !email || !phone) {
+        if (!fullName || !email || !phone || !agencyName || !consent) {
             alert('נא למלא את כל השדות.');
             return;
         }
@@ -214,7 +223,9 @@
         const formData = {
             fullName: fullName,
             email: email,
-            phone: phone
+            phone: phone,
+            agencyName: agencyName,
+            consent: consent
         };
 
         // הדפסת הנתונים לקונסול לבדיקת תקינות
@@ -247,3 +258,4 @@
     }
   </script>
 </body>
+</html>
